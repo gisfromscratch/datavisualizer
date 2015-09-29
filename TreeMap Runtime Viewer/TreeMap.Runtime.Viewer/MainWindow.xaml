@@ -1,0 +1,71 @@
+﻿<Window x:Class="TreeMap.Runtime.Viewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:tm="clr-namespace:TreeMaps.Controls;assembly=TreeMaps"
+        Title="TreeMap Runtime Viewer" Height="350" Width="525">
+    <Grid>
+        <Grid.Resources>
+            <!-- Data template for the tree map -->
+            <HierarchicalDataTemplate x:Key="tableItemTemplate" ItemsSource="{Binding Path=AttributeValues}">
+                <Border Background="Transparent">
+                    <Border.ToolTip>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Path=Name}" Margin="0,0,0,2"/>
+                            <TextBlock Text="{Binding Path=Count}" />
+                        </StackPanel>
+                    </Border.ToolTip>
+                    <Grid/>
+                </Border>
+            </HierarchicalDataTemplate>
+
+            <!-- Tree map item styling-->
+            <Style TargetType="{x:Type tm:TreeMapItem}">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Background" >
+                    <Setter.Value>
+                        <RadialGradientBrush
+              GradientOrigin="0.2,0.2"
+              Center="0.2,0.2" RadiusX="1" RadiusY="1">
+                            <RadialGradientBrush.GradientStops>
+                                <GradientStop Color="White" Offset="0" />
+                                <GradientStop Color="LightGray" Offset="0.1" />
+                                <GradientStop Color="Black" Offset="1" />
+                            </RadialGradientBrush.GradientStops>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="Opacity" Value=".75"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <Setter Property="BorderBrush" Value="Red"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Background" >
+                            <Setter.Value>
+                                <RadialGradientBrush
+                  GradientOrigin="0.2,0.2"
+                  Center="0.2,0.2" RadiusX="1" RadiusY="1">
+                                    <RadialGradientBrush.GradientStops>
+                                        <GradientStop Color="DarkGray" Offset="0" />
+                                        <GradientStop Color="LightGray" Offset="0.1" />
+                                        <GradientStop Color="White" Offset="1" />
+                                    </RadialGradientBrush.GradientStops>
+                                </RadialGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        
+        <!-- Tree map -->
+        <tm:TreeMaps x:Name="treeMaps" 
+                     ItemTemplate="{StaticResource tableItemTemplate}" 
+                     ValuePropertyName="Count" 
+                     TreeMapMode="Squarified">
+        </tm:TreeMaps>
+        
+    </Grid>
+</Window>
