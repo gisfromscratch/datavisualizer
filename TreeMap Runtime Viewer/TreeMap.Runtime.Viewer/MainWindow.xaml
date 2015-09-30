@@ -2,7 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:tm="clr-namespace:TreeMaps.Controls;assembly=TreeMaps"
-        Title="TreeMap Runtime Viewer" Height="350" Width="525">
+        Title="TreeMap Runtime Viewer" Height="350" Width="525"
+        AllowDrop="True" Drop="WindowDrop">
     <Grid>
         <Grid.Resources>
             <!-- Data template for the tree map -->
@@ -10,11 +11,12 @@
                 <Border Background="Transparent">
                     <Border.ToolTip>
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding Path=Name}" Margin="0,0,0,2"/>
-                            <TextBlock Text="{Binding Path=Count}" />
+                            <TextBlock Text="{Binding Path=UniqueValueCount}" />
                         </StackPanel>
                     </Border.ToolTip>
-                    <Grid/>
+                    <Grid>
+                        <TextBlock Text="{Binding Path=Name}" Margin="0,0,0,2"/>
+                    </Grid>
                 </Border>
             </DataTemplate>
 
@@ -63,7 +65,7 @@
         <!-- Tree map -->
         <tm:TreeMaps x:Name="treeMaps" 
                      ItemTemplate="{StaticResource tableItemTemplate}" 
-                     ValuePropertyName="Count" 
+                     ValuePropertyName="UniqueValueCount" 
                      TreeMapMode="Squarified">
         </tm:TreeMaps>
         

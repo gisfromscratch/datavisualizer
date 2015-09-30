@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TreeMap.Runtime.Viewer.Model;
+using System.IO;
+using Esri.ArcGISRuntime.Data;
 
 namespace TreeMap.Runtime.Viewer
 {
@@ -21,20 +24,51 @@ namespace TreeMap.Runtime.Viewer
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ConcurrentQueue<DataStatisticsResult> _statisticsResults;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
 
-            var statisticsResults = new List<DataStatisticsResult>();
-            statisticsResults.Add(new DataStatisticsResult { Name = @"OID", Count = 100 });
-            statisticsResults.Add(new DataStatisticsResult { Name = @"SHAPE", Count = 1 });
-            statisticsResults.Add(new DataStatisticsResult { Name = @"SHAPE", Count = 1 });
+        private async void WindowDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                var filePaths = e.Data.GetData(DataFormats.FileDrop) as string[];
+                if (null != filePaths)
+                {
+                    _statisticsResults = new ConcurrentQueue<DataStatisticsResult>();
 
-            var tableItem = new TableItem { TableName = @"Points", RowCount = 100, StatisticsResults = statisticsResults };
+                    var dataStatistics = new DataStatistics();
+                    foreach (var filePath in filePaths)
+                    {
+                        if (File.Exists(filePath) && filePath.EndsWith(@".geodatabase"))
+                        {
+                            try
+                            {
+                                var geodatabase = await Geodatabase.OpenAsync(filePath);
+                                var tables = geodatabase.FeatureTables;
+                                foreach (var table in tables)
+                                {
+                                    var fields = table.Schema.Fields;
+                                    foreach (var field in fields)
+                                    {
+                                        var result = await dataStatistics.CalculateStatistics(table, field);
+                                        _statisticsResults.Enqueue(result);
+                                    }
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                // TODO: Logging
+                            }
+                        }
+                    }
 
-            var tableItems = new List<TableItem>();
-            tableItems.Add(tableItem);
-            treeMaps.ItemsSource = statisticsResults;
+                    treeMaps.ItemsSource = _statisticsResults;
+                }
+            }
         }
     }
 }
