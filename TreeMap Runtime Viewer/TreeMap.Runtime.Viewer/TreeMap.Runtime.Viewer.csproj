@@ -57,9 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Attribute.cs" />
-    <Compile Include="Model\AttributeValue.cs" />
     <Compile Include="Model\TableItem.cs" />
+    <Compile Include="Model\DataStatistics.cs" />
+    <Compile Include="Model\DataStatisticsResult.cs" />
     <Compile Include="ViewModel\TableItemViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

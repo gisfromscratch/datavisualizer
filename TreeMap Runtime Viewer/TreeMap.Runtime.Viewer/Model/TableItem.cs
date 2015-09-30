@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 namespace TreeMap.Runtime.Viewer.Model
 {
     /// <summary>
-    /// Represents a table item.
+    /// Represents a table having statistics.
     /// </summary>
     internal class TableItem
     {
-        public IList<Attribute> Attributes { get; set; }
+        public string TableName { get; set; }
+
+        public long RowCount { get; set; }
+
+        public IList<DataStatisticsResult> StatisticsResults { get; set; }
     }
 }

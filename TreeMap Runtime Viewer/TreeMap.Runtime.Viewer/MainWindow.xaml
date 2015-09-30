@@ -6,7 +6,7 @@
     <Grid>
         <Grid.Resources>
             <!-- Data template for the tree map -->
-            <HierarchicalDataTemplate x:Key="tableItemTemplate" ItemsSource="{Binding Path=AttributeValues}">
+            <DataTemplate x:Key="tableItemTemplate">
                 <Border Background="Transparent">
                     <Border.ToolTip>
                         <StackPanel Orientation="Vertical">
@@ -16,7 +16,7 @@
                     </Border.ToolTip>
                     <Grid/>
                 </Border>
-            </HierarchicalDataTemplate>
+            </DataTemplate>
 
             <!-- Tree map item styling-->
             <Style TargetType="{x:Type tm:TreeMapItem}">

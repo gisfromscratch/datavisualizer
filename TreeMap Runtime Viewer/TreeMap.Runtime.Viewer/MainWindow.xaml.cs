@@ -25,21 +25,16 @@ namespace TreeMap.Runtime.Viewer
         {
             InitializeComponent();
 
-            var tableItem = new TableItem();
+            var statisticsResults = new List<DataStatisticsResult>();
+            statisticsResults.Add(new DataStatisticsResult { Name = @"OID", Count = 100 });
+            statisticsResults.Add(new DataStatisticsResult { Name = @"SHAPE", Count = 1 });
+            statisticsResults.Add(new DataStatisticsResult { Name = @"SHAPE", Count = 1 });
 
-            var idValues = new List<AttributeValue>();
-            idValues.Add(new AttributeValue { Value = @"TT", Count = 1 });
-            idValues.Add(new AttributeValue { Value = @"SS", Count = 10 });
+            var tableItem = new TableItem { TableName = @"Points", RowCount = 100, StatisticsResults = statisticsResults };
 
-            var attributes = new List<TreeMap.Runtime.Viewer.Model.Attribute>();
-            attributes.Add(new TreeMap.Runtime.Viewer.Model.Attribute { Name = @"ID", AttributeValues = idValues });
-
-            var nameValues = new List<AttributeValue>();
-            nameValues.Add(new AttributeValue { Value = @"TT", Count = 11 });
-            attributes.Add(new TreeMap.Runtime.Viewer.Model.Attribute { Name = @"Name", AttributeValues = nameValues });
-
-            tableItem.Attributes = attributes;
-            treeMaps.ItemsSource = tableItem.Attributes;
+            var tableItems = new List<TableItem>();
+            tableItems.Add(tableItem);
+            treeMaps.ItemsSource = statisticsResults;
         }
     }
 }
