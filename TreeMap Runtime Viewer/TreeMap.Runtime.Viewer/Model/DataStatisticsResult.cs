@@ -12,9 +12,14 @@ namespace TreeMap.Runtime.Viewer.Model
     internal class DataStatisticsResult
     {
         /// <summary>
-        /// The name of this result.
+        /// The table name of this result.
         /// </summary>
-        public string Name { get; set; }
+        public string TableName { get; set; }
+
+        /// <summary>
+        /// The attribute name of this result.
+        /// </summary>
+        public string AttributeName { get; set; }
 
         /// <summary>
         /// The number of all values.
