@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1409E767-921E-4E4E-BF1D-273AD078822B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>EarthquakeVTKSample</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Charts\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Common\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Common\DataModel;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Filters\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Filters\General;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Filters\Hybrid;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Filters\Modeling;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Filters\Sources;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Imaging\Hybrid;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Interaction\Style;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Interaction\Widgets;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\IO\Image;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Rendering\Annotation;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Rendering\Context2D;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Rendering\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Rendering\FreeType;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Rendering\Volume;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Views\Context2D;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Views\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Charts\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Common;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Common\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Common\DataModel;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Common\Math;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Rendering\Context2D;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Rendering\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Views\Context2D;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Views\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Charts\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Common\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Common\DataModel;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Filters\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Filters\General;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Filters\Hybrid;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Filters\Modeling;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Filters\Sources;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Imaging\Hybrid;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Interaction\Style;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Interaction\Widgets;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\IO\Image;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Rendering\Annotation;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Rendering\Context2D;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Rendering\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Rendering\FreeType;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Rendering\Volume;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Views\Context2D;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\build\Views\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Charts\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Common;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Common\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Common\DataModel;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Common\Math;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Rendering\Context2D;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Rendering\Core;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Views\Context2D;D:\LocalGit\Repos\datavisualizer\lib\vtk\include\Views\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
