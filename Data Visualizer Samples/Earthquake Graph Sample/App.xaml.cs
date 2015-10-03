@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Earthquake_Graph_Sample
+namespace Earthquake.Graph.Sample
 {
     /// <summary>
     /// Interaction logic for App.xaml

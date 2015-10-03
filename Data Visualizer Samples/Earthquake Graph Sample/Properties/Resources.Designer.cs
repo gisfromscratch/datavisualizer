@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Earthquake_Graph_Sample.Properties
+namespace Earthquake.Graph.Sample.Properties
 {
 
 
