@@ -13,6 +13,9 @@
 #include <vtkContextScene.h>
 #include <vtkPen.h>
 
+#include <vtkAutoInit.h>
+VTK_MODULE_INIT(vtkRenderingOpenGL);
+
 int WINAPI WinMain(HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
 	LPSTR lpCmdLine,
