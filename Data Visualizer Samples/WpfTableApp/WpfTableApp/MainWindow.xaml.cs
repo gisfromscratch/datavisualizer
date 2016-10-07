@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using WpfTableApp.ViewModel;
 
 namespace WpfTableApp
 {
@@ -23,6 +11,29 @@ namespace WpfTableApp
         public MainWindow()
         {
             InitializeComponent();
+
+            // Create the view model
+            DataContext = new TableViewModel();
+        }
+
+        private void DataGrid_Drop(object sender, DragEventArgs e)
+        {
+            var viewModel = DataContext as TableViewModel;
+            if (null == viewModel || !e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                return;
+            }
+
+            var filePaths = e.Data.GetData(DataFormats.FileDrop) as string[];
+            if (null == filePaths || 1 != filePaths.Length)
+            {
+                return;
+            }
+
+            if (viewModel.LoadCommand.CanExecute(filePaths[0]))
+            {
+                viewModel.LoadCommand.Execute(filePaths[0]);
+            }
         }
     }
 }
