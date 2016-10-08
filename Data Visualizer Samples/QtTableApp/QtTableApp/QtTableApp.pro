@@ -14,9 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         MainWindow.cpp \
-    SimpleTableModel.cpp
+    SimpleTableModel.cpp \
+    InMemoryTableModel.cpp
 
 HEADERS  += MainWindow.h \
-    SimpleTableModel.h
+    SimpleTableModel.h \
+    InMemoryTableModel.h
 
 FORMS    += MainWindow.ui

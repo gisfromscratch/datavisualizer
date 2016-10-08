@@ -1,6 +1,7 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
+#include "InMemoryTableModel.h"
 #include "SimpleTableModel.h"
 
 #include <QFileDialog>
@@ -29,6 +30,6 @@ void MainWindow::on_actionOpen_triggered()
     }
 
     // Create a new table model
-    SimpleTableModel *tableModel = new SimpleTableModel(new QFile(filePath, this), this);
+    QAbstractTableModel *tableModel = new InMemoryTableModel(new QFile(filePath, this), this);
     ui->tableView->setModel(tableModel);
 }
