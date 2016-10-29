@@ -30,6 +30,6 @@ void MainWindow::on_actionOpen_triggered()
     }
 
     // Create a new table model
-    QAbstractTableModel *tableModel = new InMemoryTableModel(new QFile(filePath, this), this);
+    QAbstractTableModel *tableModel = new SimpleTableModel(new QFile(filePath, this), this);
     ui->tableView->setModel(tableModel);
 }
