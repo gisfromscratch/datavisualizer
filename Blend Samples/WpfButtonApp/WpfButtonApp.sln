@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Blend for Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfButtonApp", "WpfButtonApp\WpfButtonApp.csproj", "{86625401-B390-4FD3-BA13-884D2C9D1666}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfStyledApp", "..\WpfStyledApp\WpfStyledApp.csproj", "{30ECD2B7-64D2-4168-B623-5ACE140368D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportTextfileApp", "ImportTextfileApp\ImportTextfileApp.csproj", "{0F380286-67BC-45D1-912F-F25A4086F1F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{30ECD2B7-64D2-4168-B623-5ACE140368D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30ECD2B7-64D2-4168-B623-5ACE140368D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30ECD2B7-64D2-4168-B623-5ACE140368D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F380286-67BC-45D1-912F-F25A4086F1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F380286-67BC-45D1-912F-F25A4086F1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F380286-67BC-45D1-912F-F25A4086F1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F380286-67BC-45D1-912F-F25A4086F1F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
