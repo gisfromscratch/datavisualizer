@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<TextEncodings>
+  <TextEncoding Name="ASCII">
+    ASCII
+  </TextEncoding>
+  <TextEncoding Name="UTF-8">
+    UTF-8
+  </TextEncoding>
+</TextEncodings>
