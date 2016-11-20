@@ -31,14 +31,10 @@
         <GroupBox x:Name="columnBox" Header="Text encoding" DockPanel.Dock="Top" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="5">
                 <Label x:Name="delimiterLabel" Content="Delimiter" Margin="5" d:LayoutOverrides="Width" HorizontalAlignment="Left"/>
-                <ComboBox x:Name="delimiterComboBox" Width="120" Margin="5" SelectedIndex="0">
-                    <ComboBoxItem Content="ANSI"/>
-                    <ComboBoxItem Content="UTF-8"/>
-                </ComboBox>
-                <Label x:Name="label3" Content="Character set" Margin="10,5,5,5"/>
-                <ComboBox x:Name="comboBox3" Width="120" Margin="5" SelectedIndex="0">
-                    <ComboBoxItem Content="Western"/>
-                </ComboBox>
+                <ComboBox x:Name="delimiterComboBox" Margin="5" Width="120"
+                          SelectedItem="{Binding Mode=TwoWay, Path=SelectedDelimiter}" 
+                          ItemsSource="{Binding Mode=OneWay, Path=Delimiters}" 
+                          DisplayMemberPath="Name"/>
             </StackPanel>
         </GroupBox>
     </DockPanel>

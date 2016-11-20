@@ -14,6 +14,8 @@ namespace ImportTextfileApp.ViewModel
         private TextEncodingItem _selectedTextEncoding;
         private ObservableCollection<CharacterSetItem> _characterSets;
         private CharacterSetItem _selectedCharacterSet;
+        private ObservableCollection<DelimiterItem> _delimiters;
+        private DelimiterItem _selectedDelimiter;
 
         public ImportTextFileViewModel()
         {
@@ -25,6 +27,12 @@ namespace ImportTextfileApp.ViewModel
             _selectedCharacterSet = new CharacterSetItem { Name = @"Western" };
             _characterSets = new ObservableCollection<CharacterSetItem>();
             _characterSets.Add(_selectedCharacterSet);
+
+            _selectedDelimiter = new DelimiterItem { Name = @"Comma", Delimiters = new[] { ',' } };
+            _delimiters = new ObservableCollection<DelimiterItem>();
+            _delimiters.Add(_selectedDelimiter);
+            _delimiters.Add(new DelimiterItem { Name = @"TAB", Delimiters = new[] { '\t' } });
+            _delimiters.Add(new DelimiterItem { Name = @"Colon", Delimiters = new[] { ';' } });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -76,6 +84,32 @@ namespace ImportTextfileApp.ViewModel
                 if (value != _selectedCharacterSet)
                 {
                     _selectedCharacterSet = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public ObservableCollection<DelimiterItem> Delimiters
+        {
+            get { return _delimiters; }
+            set
+            {
+                if (value != _delimiters)
+                {
+                    _delimiters = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public DelimiterItem SelectedDelimiter
+        {
+            get { return _selectedDelimiter; }
+            set
+            {
+                if (value != _selectedDelimiter)
+                {
+                    _selectedDelimiter = value;
                     OnPropertyChanged();
                 }
             }

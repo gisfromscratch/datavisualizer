@@ -57,6 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Data\CharacterSetItem.cs" />
+    <Compile Include="Data\DelimiterItem.cs" />
     <Compile Include="Data\TextEncodingItem.cs" />
     <Compile Include="ImportTextfileControl.xaml.cs">
       <DependentUpon>ImportTextfileControl.xaml</DependentUpon>

@@ -1,10 +1,12 @@
 ﻿namespace ImportTextfileApp.Data
 {
     /// <summary>
-    /// Represents a text encoding item.
+    /// Represents a delimiter item.
     /// </summary>
-    public class TextEncodingItem
+    public class DelimiterItem
     {
         public string Name { get; set; }
+
+        public char[] Delimiters { get; set; }
     }
 }
