@@ -17,11 +17,15 @@
         <GroupBox x:Name="encodingBox" Header="Text encoding" DockPanel.Dock="Top" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="5">
                 <Label x:Name="label" Content="Encoding" Margin="5" d:LayoutOverrides="Width" HorizontalAlignment="Left"/>
-                <ComboBox x:Name="comboBox" Margin="5" SelectedIndex="0" ItemsSource="{Binding Mode=OneWay, Path=TextEncodings}" DisplayMemberPath="Name" Width="100.077"/>
+                <ComboBox x:Name="comboBox" Margin="5" Width="120"
+                          SelectedItem="{Binding Mode=TwoWay, Path=SelectedTextEncoding}" 
+                          ItemsSource="{Binding Mode=OneWay, Path=TextEncodings}" 
+                          DisplayMemberPath="Name"/>
                 <Label x:Name="label1" Content="Character set" Margin="10,5,5,5"/>
-                <ComboBox x:Name="comboBox1" Width="120" Margin="5" SelectedIndex="0">
-                    <ComboBoxItem Content="Western"/>
-                </ComboBox>
+                <ComboBox x:Name="comboBox1" Margin="5" Width="120"
+                          SelectedItem="{Binding Mode=TwoWay, Path=SelectedCharacterSet}" 
+                          ItemsSource="{Binding Mode=OneWay, Path=CharacterSets}" 
+                          DisplayMemberPath="Name"/>
             </StackPanel>
         </GroupBox>
         <GroupBox x:Name="recordBox" Header="Text encoding" DockPanel.Dock="Top" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Stretch">
